@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(228, 250, 132);
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Random song w/ inputs and description */
+.random-song-container{
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+}
+
+.random-song-title{
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.random-song-description{
+    margin-bottom: 5px;
+}
+
+.random-song-description-two{
+    margin-bottom: 3rem;
+}
+
+.song-number-input-container{
+    margin-bottom: 15px;
+}
+
+#song-number-input{
+    width: 550px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.generate-button{
+    height: 40px;
+    margin-left: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 0 10px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgb(113, 153, 247);
+}
+
+.generate-button:hover{
+    background-color: rgb(74, 92, 255);
+}
+
+
+/* Generated song grid/rows */
+.song-grid-container{
+    margin: 0 auto;
+    max-width: 1100px;
+    margin-bottom: 5rem;
+}
+
+.song-grid-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 25px 30px;
+}
+
+/* Center single and two embed songs nicely */
+.song-grid-items.center-songs {
+  display: flex;
+  justify-content: center;
+}
+
+.song-grid-items.center-songs iframe{
+  max-width: 400px; 
+  width: 100%;
+}
+
+
+/* Loader animation when loading in the songs */
+.loader{
+    margin-top: 50px;
+    margin: 0 auto;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: 
+            radial-gradient(farthest-side,rgb(50, 70, 252) 94%,#0000) top/8px 8px no-repeat,
+            conic-gradient(#0000 30%, rgb(103, 148, 253));
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation: l13 1s infinite linear;
+}
+
+@keyframes l13{ 
+  100%{transform: rotate(1turn)}
+}
+
+.loader-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* Footer */
+.creator-footer{
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: auto;
+}
+
+.footer-line{
+    margin-bottom: 30px;
+}
+
+hr{
+    border: 1px solid rgb(113, 153, 247);
+    margin: 0 auto;
+    max-width: 60%;
+}
+
+.footer-name{
+    font-weight: 600;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 550px) {
+    .random-song-title{
+        font-size: 2.5rem;
+    }
+
+    #song-number-input{
+        max-width: 350px;
+        margin-bottom: 10px;
+    }
+
+    .song-grid-items{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 30px;
+    }
+
+    hr{
+        max-width: 100%;
+    }
+
+}
+

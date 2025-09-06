@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Song Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/music.svg" type="image/svg">
+</head>
+<body>
+    <section class="random-song-container">
+        <h1 class="random-song-title">Random Song Generator</h1>
+
+        <div class="song-number-input-container">
+            <input type="text" name="song-number" id="song-number-input" placeholder="Number of Songs (From 1 to 6)">
+            <button class="generate-button js-generate-button">Generate</button>
+        </div>
+
+        <p class="random-song-description">It will randomly generate any songs that are available from Spotify.</p>
+        <p class="random-song-description-two">With a maximum of 6 songs at once.</p>
+
+        <!-- Loader animation when loading songs -->
+        <div class="loader loader-hidden"></div>
+    </section>
+
+    <main class="song-grid-container">
+        <!-- JavaScript to create the embed songs -->
+        <div class="song-grid-items js-song-grid-items"></div>
+    </main>
+
+    <footer class="creator-footer">
+        <div class="footer-line"><hr></div>
+        <p class="footer-name">Made by Lee Jia Kin</p>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="jsscript.js" type="module"></script>
+    <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+    
+</body>
+</html>
