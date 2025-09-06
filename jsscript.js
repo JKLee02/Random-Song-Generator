@@ -21,7 +21,8 @@ async function getSongs() {
     countSong = 6;
   }
 
-  const apiUrl = import.meta.env.API_URL;
+  const config = await fetch("/config.json").then(r => r.json());
+  const apiUrl = config.API_URL;
 
   const res = await fetch(`${apiUrl}/random-songs?count=${countSong}`);
   // const res = await fetch(`http://localhost:3000/random-songs?count=${countSong}`);
